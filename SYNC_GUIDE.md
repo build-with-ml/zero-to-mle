@@ -47,7 +47,7 @@ When you fork `zero-to-mle`, you get your own copy. But the original repo keeps 
 
 ```bash
 # One-time setup: add the original repo as "upstream"
-git remote add upstream https://github.com/ORIGINAL_OWNER/zero-to-mle.git
+git remote add upstream https://github.com/build-with-ml/zero-to-mle.git
 
 # Whenever you want to pull new content:
 git fetch upstream

@@ -294,6 +294,6 @@ Share your progress with **#ZeroToMLE** on Twitter/LinkedIn.
 ---
 
 <p align="center">
-  <b>Built with 🧠 by <a href="https://github.com/YOUR_USERNAME">Laxman Muttineni</a></b><br/>
+  <b>Built with 🧠 by <a href="https://github.com/build-with-ml">build-with-ml</a></b><br/>
   <i>If this roadmap helps you land an MLE role, consider starring the repo and sharing your story!</i>
 </p>

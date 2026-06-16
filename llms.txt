@@ -1,0 +1,39 @@
+# Zero to MLE — LLM Context File
+
+> This file helps AI assistants understand and navigate this repository effectively.
+
+## What This Repo Is
+
+A structured 24-week roadmap for software engineers transitioning to Machine Learning Engineer (MLE) roles at Amazon, Meta, Google, OpenAI, and Anthropic. It includes week-by-week learning plans, project templates, curated resources, and progress tracking.
+
+## How to Navigate
+
+- `weeks/phase-{N}-{name}/README.md` — Detailed weekly plans with resources, exercises, and deliverables
+- `projects/project-{N}-{name}/README.md` — Project templates with architecture, requirements, and structure
+- `resources/{type}.md` — Curated lists of books, courses, papers, tools
+- `tracking/{type}.md` — Progress tracking templates (LeetCode, blogs, interviews)
+- `PROGRESS.md` — Master checklist for all 24 weeks
+
+## Phases
+
+1. Phase 1 (Weeks 1–4): Math Foundations — linear algebra, probability, calculus, optimization
+2. Phase 2 (Weeks 5–10): Core ML — linear models, trees, ensembles, evaluation, feature engineering
+3. Phase 3 (Weeks 11–16): Deep Learning — neural nets from scratch, PyTorch, CNNs, Transformers
+4. Phase 4 (Weeks 17–20): LLMs & GenAI — prompting, RAG, fine-tuning (LoRA/RLHF), AI agents
+5. Phase 5 (Weeks 21–23): MLOps — model serving, pipelines, CI/CD, monitoring, drift detection
+6. Phase 6 (Week 24+): Interview Prep — ML system design, coding, behavioral (Amazon LPs)
+
+## How Users Use This Repo
+
+- **Fork** the repo to get their own copy
+- Check off items in PROGRESS.md as they complete them
+- Build projects in the `projects/` directories
+- Push progress to their fork (builds GitHub contribution graph)
+
+## Key Design Principles
+
+- Every week produces a tangible output (code, blog post, or deployed artifact)
+- Online visibility (blogging, GitHub, LinkedIn) is integrated into every phase
+- Resources are opinionated — one primary resource per topic, no decision paralysis
+- Aligned to real interview requirements at top AI companies (2025–2026 job descriptions)
+- Production-focused: deploy, monitor, and maintain — not just train models

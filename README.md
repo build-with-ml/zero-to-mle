@@ -145,7 +145,18 @@ This repo is structured to work well with AI agents (Kiro, Copilot, Cursor, etc.
 - **Ask your AI assistant to read a week's plan**: "Read `weeks/phase-3-deep-learning/README.md` and help me implement this week's exercises"
 - **Use project templates as specs**: "Follow the structure in `projects/project-3-llm-app/README.md` to scaffold my RAG project"
 - **Track progress with AI help**: "Read `PROGRESS.md` and tell me what I should work on next"
+- **Auto-extract Q&A**: After a study session, ask your AI: "Summarize the key questions I asked today in the Q&A format from `qa/README.md` and add them to the relevant phase file"
 - **The flat markdown structure** makes it easy for LLMs to parse and reason about
+
+### Keeping Your Fork Updated 🔄
+
+The main repo grows over time (new Q&A, better resources, fixes). See **[SYNC_GUIDE.md](SYNC_GUIDE.md)** for how to pull updates without losing your progress.
+
+**TL;DR**: Only edit files in `tracking/`, `projects/`, and `PROGRESS.md`. Everything else syncs cleanly from upstream.
+
+### Contributing Q&A Back 🧠
+
+As you learn, you'll ask great questions. Add them to `qa/phase-X/` in your fork, then PR the best ones back. See **[qa/README.md](qa/README.md)** for the format and workflow.
 
 ---
 
@@ -206,10 +217,18 @@ Building in public is not optional — it's your unfair advantage.
 ```
 zero-to-mle/
 ├── README.md                    ← You are here
-├── PROGRESS.md                  ← ✅ Track your weekly progress
+├── PROGRESS.md                  ← ✅ Track your weekly progress (YOUR file)
+├── SYNC_GUIDE.md                ← How to pull updates without losing progress
 ├── CONTRIBUTING.md              ← How to contribute
 ├── CODE_OF_CONDUCT.md           ← Community standards
 ├── LICENSE                      ← MIT
+├── qa/                          ← 🧠 Community Q&A knowledge base (grows over time)
+│   ├── phase-1/                 ← Math Q&A
+│   ├── phase-2/                 ← Core ML Q&A
+│   ├── phase-3/                 ← Deep Learning Q&A
+│   ├── phase-4/                 ← LLM Q&A
+│   ├── phase-5/                 ← MLOps Q&A
+│   └── phase-6/                 ← Interview Q&A
 ├── weeks/
 │   ├── phase-1-foundations/     ← Weeks 1–4: Math
 │   ├── phase-2-core-ml/        ← Weeks 5–10: Algorithms

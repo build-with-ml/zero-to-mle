@@ -156,7 +156,7 @@ The main repo grows over time (new Q&A, better resources, fixes). See **[SYNC_GU
 
 ### Contributing Q&A Back 🧠
 
-As you learn, you'll ask great questions. Add them to `qa/phase-X/` in your fork, then PR the best ones back. See **[qa/README.md](qa/README.md)** for the format and workflow.
+As you learn, you'll ask great questions. Add them to `qa-*.md` files in the same phase folder, then PR the best ones back. See **[QA_GUIDE.md](QA_GUIDE.md)** for format and workflow.
 
 ---
 
@@ -222,20 +222,14 @@ zero-to-mle/
 ├── CONTRIBUTING.md              ← How to contribute
 ├── CODE_OF_CONDUCT.md           ← Community standards
 ├── LICENSE                      ← MIT
-├── qa/                          ← 🧠 Community Q&A knowledge base (grows over time)
-│   ├── phase-1/                 ← Math Q&A
-│   ├── phase-2/                 ← Core ML Q&A
-│   ├── phase-3/                 ← Deep Learning Q&A
-│   ├── phase-4/                 ← LLM Q&A
-│   ├── phase-5/                 ← MLOps Q&A
-│   └── phase-6/                 ← Interview Q&A
+├── QA_GUIDE.md                  ← 🧠 How the Q&A system works
 ├── weeks/
-│   ├── phase-1-foundations/     ← Weeks 1–4: Math
-│   ├── phase-2-core-ml/        ← Weeks 5–10: Algorithms
-│   ├── phase-3-deep-learning/  ← Weeks 11–16: Neural Nets & Transformers
-│   ├── phase-4-llms/           ← Weeks 17–20: LLMs, RAG, Agents
-│   ├── phase-5-mlops/          ← Weeks 21–23: Production ML
-│   └── phase-6-interview/      ← Week 24+: System Design & Prep
+│   ├── phase-1-foundations/     ← Weeks 1–4: Math + qa-*.md files
+│   ├── phase-2-core-ml/        ← Weeks 5–10: Algorithms + qa-*.md files
+│   ├── phase-3-deep-learning/  ← Weeks 11–16: Neural Nets + qa-*.md files
+│   ├── phase-4-llms/           ← Weeks 17–20: LLMs + qa-*.md files
+│   ├── phase-5-mlops/          ← Weeks 21–23: Production ML + qa-*.md files
+│   └── phase-6-interview/      ← Week 24+: System Design + qa-*.md files
 ├── projects/
 │   ├── project-1-ml-pipeline/  ← End-to-end sklearn project
 │   ├── project-2-deep-learning/← Fine-tuned model

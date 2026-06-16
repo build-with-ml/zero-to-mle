@@ -24,10 +24,11 @@ When you fork `zero-to-mle`, you get your own copy. But the original repo keeps 
 ### What Gets Updated from Upstream (DON'T edit these)
 
 ```
-⚠️ weeks/                        ← Updated with new content, fixes
+⚠️ weeks/*/README.md             ← Updated with new content, fixes
+⚠️ weeks/*/qa-*.md               ← Community Q&A (growing over time)
 ⚠️ resources/                    ← New books, courses, tools
-⚠️ qa/                           ← Community Q&A (growing over time)
 ⚠️ README.md                     ← Improved instructions, links
+⚠️ QA_GUIDE.md                   ← Updated Q&A guidelines
 ⚠️ CONTRIBUTING.md               ← Updated guidelines
 ```
 
@@ -59,7 +60,7 @@ git push origin main
 **If you get merge conflicts** (because you edited a shared file):
 ```bash
 # Accept upstream's version for shared files
-git checkout --theirs weeks/ resources/ qa/ README.md
+git checkout --theirs weeks/ resources/ README.md QA_GUIDE.md
 git add .
 git commit -m "sync: merge upstream updates, keep my tracking"
 ```
@@ -71,11 +72,12 @@ git commit -m "sync: merge upstream updates, keep my tracking"
 ```
 Week N:
 1. Learn from weeks/phase-X/README.md (DON'T edit this)
-2. Write your notes in tracking/ or a personal notes/ folder (yours to edit)
-3. Check off items in PROGRESS.md (yours to edit)
-4. Build projects in projects/ (yours to edit)
-5. If you have good Q&A → submit a PR to the main repo's qa/ folder
-6. Sync from upstream periodically (every 1-2 weeks)
+2. Ask questions → add to weeks/phase-X/qa-*.md (contribute via PR later)
+3. Write your notes in tracking/ or a personal notes/ folder (yours to edit)
+4. Check off items in PROGRESS.md (yours to edit)
+5. Build projects in projects/ (yours to edit)
+6. Periodically PR your best Q&A entries back to upstream
+7. Sync from upstream every 1-2 weeks to get new Q&A from others
 ```
 
 ---

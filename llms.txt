@@ -9,10 +9,13 @@ A structured 24-week roadmap for software engineers transitioning to Machine Lea
 ## How to Navigate
 
 - `weeks/phase-{N}-{name}/README.md` — Detailed weekly plans with resources, exercises, and deliverables
+- `weeks/phase-{N}-{name}/qa-*.md` — Q&A knowledge base files, co-located with the topic they cover
 - `projects/project-{N}-{name}/README.md` — Project templates with architecture, requirements, and structure
 - `resources/{type}.md` — Curated lists of books, courses, papers, tools
 - `tracking/{type}.md` — Progress tracking templates (LeetCode, blogs, interviews)
 - `PROGRESS.md` — Master checklist for all 24 weeks
+- `QA_GUIDE.md` — How the Q&A system works, format template
+- `SYNC_GUIDE.md` — How forked users pull upstream updates without conflicts
 
 ## Phases
 

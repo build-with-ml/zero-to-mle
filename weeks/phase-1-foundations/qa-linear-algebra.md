@@ -1,6 +1,6 @@
-# Linear Algebra — Q&A
+# ❓ Q&A: Linear Algebra (Week 1)
 
-Questions and answers collected while studying Phase 1, Week 1.
+Questions and answers collected during study. Useful as self-test flashcards and interview prep.
 
 ---
 
@@ -33,15 +33,15 @@ SVD decomposes any matrix A into A = UΣVᵀ where:
 - Vᵀ = right singular vectors (patterns in columns/features)
 
 ML applications:
-1. **Dimensionality reduction**: Keep top-k singular values → low-rank approximation (PCA is a special case)
+1. **Dimensionality reduction**: Keep top-k singular values → low-rank approximation
 2. **Recommender systems**: Decompose user-item matrix → find latent factors
 3. **Image compression**: Keep top-k components → reconstruct with less data
 4. **Noise reduction**: Small singular values ≈ noise, remove them
-5. **Pseudoinverse**: Solve least-squares problems when matrix isn't square/invertible
+5. **LoRA fine-tuning**: Low-rank weight updates (ΔW = AB) are inspired by SVD thinking
 
 **Key Insight**: SVD gives you the "most important patterns" in any data matrix, ranked by importance. Keeping the top-k patterns is the optimal rank-k approximation (Eckart-Young theorem).
 
-**Tags**: `#linear-algebra` `#svd` `#dimensionality-reduction` `#interview-relevant`
+**Tags**: `#linear-algebra` `#svd` `#dimensionality-reduction` `#lora` `#interview-relevant`
 
 ---
 
@@ -50,20 +50,28 @@ ML applications:
 **Context**: Implementing from scratch in NumPy, trying to build intuition beyond just "multiply and add."
 
 **Answer**: 
-- **Dot product** (two vectors): Measures how much two vectors point in the same direction. Result is a scalar. `cos(θ) = (a·b)/(|a||b|)`. If dot product is 0, vectors are perpendicular (orthogonal).
+- **Dot product** (two vectors): Measures how much two vectors point in the same direction. Result is a scalar. If dot product is 0, vectors are perpendicular (orthogonal).
   
-- **Matrix multiplication** (matrix × vector): Applies a linear transformation — rotates, scales, and/or shears the vector. Think of it as "where does each basis vector end up?"
+- **Matrix multiplication** (matrix × vector): Applies a linear transformation — rotates, scales, and/or shears the vector.
 
 - **Matrix × matrix**: Composition of two transformations. AB means "first apply B, then apply A."
 
 In ML:
 - Dot product → similarity (cosine similarity in embeddings, attention scores)
-- Matrix multiply → linear layers in neural networks (Wx + b is a transformation)
+- Matrix multiply → linear layers in neural networks (Wx + b)
 
-**Key Insight**: Every linear layer in a neural network is just matrix multiplication — a learned transformation of the input space. Attention is just dot products between queries and keys.
+**Key Insight**: Every linear layer in a neural network is just matrix multiplication — a learned transformation. Attention is dot products between queries and keys.
 
 **Tags**: `#linear-algebra` `#neural-networks` `#attention` `#interview-relevant`
 
 ---
 
-<!-- Add more Q&A entries below as you learn -->
+<!-- 
+ADD MORE Q&A BELOW 
+Use format:
+### Q: [Question]
+**Context**: [When this came up]
+**Answer**: [Explanation]
+**Key Insight**: [One-line takeaway]
+**Tags**: `#tag1` `#tag2`
+-->

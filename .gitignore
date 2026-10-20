@@ -46,3 +46,7 @@ mlruns/
 build/
 dist/
 *.egg-info/
+
+# local-only privacy guard (never publish)
+check-privacy.sh
+scripts/check-privacy.sh

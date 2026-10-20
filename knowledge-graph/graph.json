@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "description": "Edges of the discovery learning graph. Website loads this to draw ? anchors and wire forks. 'Back' is NOT stored here — it is the visitor's per-visit trail; graph edges are stable, breadcrumbs are computed.",
+  "nodes": [
+    { "id": "env-00-why-not-share-venv", "file": "nodes/env-00-why-not-share-venv.md", "entry_point": true, "concepts": ["venv", "dependencies", "git", "portability"] },
+    { "id": "env-01-version-in-import", "file": "nodes/env-01-version-in-import.md", "entry_point": true, "concepts": ["venv", "imports", "cross-language", "versioning"] },
+    { "id": "env-02-symlink-mechanism", "file": "nodes/env-02-symlink-mechanism.md", "entry_point": true, "concepts": ["venv", "sys-path", "imports", "pyvenv-cfg"] }
+  ],
+  "forks": [
+    { "id": "q-0001-what-is-compiled-code", "file": "forks/q-0001-what-is-compiled-code.md" },
+    { "id": "q-0002-recipe-not-meal", "file": "forks/q-0002-recipe-not-meal.md" },
+    { "id": "q-0003-version-in-import-why-not", "file": "forks/q-0003-version-in-import-why-not.md" },
+    { "id": "q-0004-library-full-forms-and-demand", "file": "forks/q-0004-library-full-forms-and-demand.md", "entry_point": true },
+    { "id": "q-0005-symlink-detects-deps", "file": "forks/q-0005-symlink-detects-deps.md" },
+    { "id": "q-0006-what-is-rust", "file": "forks/q-0006-what-is-rust.md" },
+    { "id": "q-0007-freeze-and-speed", "file": "forks/q-0007-freeze-and-speed.md" }
+  ],
+  "edges": [
+    { "type": "fork", "from_node": "env-00-why-not-share-venv", "anchor": "compiled C/Fortran code", "to": "q-0001-what-is-compiled-code" },
+    { "type": "fork", "from_node": "env-00-why-not-share-venv", "anchor": "the recipe, not the cooked meal", "to": "q-0002-recipe-not-meal" },
+    { "type": "fork", "from_node": "env-00-why-not-share-venv", "anchor": "numpy + matplotlib + sklearn", "to": "q-0004-library-full-forms-and-demand" },
+    { "type": "fork", "from_node": "env-01-version-in-import", "anchor": "one version of each package per environment", "to": "q-0003-version-in-import-why-not" },
+    { "type": "fork", "from_node": "env-01-version-in-import", "anchor": "Rust-based tool", "to": "q-0006-what-is-rust" },
+    { "type": "fork", "from_node": "env-01-version-in-import", "anchor": "The demand is speed", "to": "q-0007-freeze-and-speed" },
+    { "type": "fork", "from_node": "env-02-symlink-mechanism", "anchor": "just a symlink", "to": "q-0005-symlink-detects-deps" },
+    { "type": "fork", "from_node": "env-02-symlink-mechanism", "anchor": "pyvenv.cfg", "to": "q-0005-symlink-detects-deps" },
+    { "type": "related", "from": "env-00-why-not-share-venv", "to": "env-01-version-in-import" },
+    { "type": "related", "from": "env-00-why-not-share-venv", "to": "env-02-symlink-mechanism" },
+    { "type": "related", "from": "env-01-version-in-import", "to": "env-02-symlink-mechanism" },
+    { "type": "related", "from": "q-0007-freeze-and-speed", "to": "q-0006-what-is-rust" },
+    { "type": "related", "from": "q-0002-recipe-not-meal", "to": "q-0007-freeze-and-speed" }
+  ]
+}

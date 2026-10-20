@@ -32,13 +32,17 @@ than Python for this kind of work.
 
 It's not about your code — it's about what the *tool* is built in:
 
-- `pip` (the old installer) is **written in Python**, which is slow at installer work
-  (checking many version combinations, unzipping).
-- `uv` is **written in Rust**, so the installer itself runs much faster, and it also
+- `pip` (the old installer) is **written in Python**, which is slow at the heaviest
+  installer job: **dependency resolution** (checking many version combinations).
+- `uv` is **written in Rust**, so that resolution runs much faster, and it also
   downloads packages in parallel.
 
 Analogy: a calculator app written in a fast language adds numbers faster than the
 same app in a slow one. `uv` is the fast-language version of `pip`.
+
+**Caveat (measured):** the win shows up when there's a lot to *resolve* (loose,
+unpinned installs). For an already-pinned `requirements.txt` with little to resolve,
+the two are close and pip can even be faster — see **q-0007** for the numbers.
 
 ## Next
 

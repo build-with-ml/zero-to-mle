@@ -1,6 +1,6 @@
 ---
 id: q-0007-freeze-and-speed
-title: What is "freezing versions", and how is uv actually faster?
+title: What is "freezing versions", and when is uv actually faster than pip?
 kind: fork
 concepts: [dependencies, requirements, uv, pip, reproducibility]
 entry_point: false
@@ -9,7 +9,7 @@ parent_anchor:
   text: "The demand is speed"
 question: "how is it speed, compare to others; and 'freeze versions' is not intuitive — justify your statement"
 related: [q-0006-what-is-rust, q-0002-recipe-not-meal]
-verified_with: "timed fresh no-cache install of numpy+matplotlib+sklearn: uv 3.06s vs pip 17.19s (5.6x); pip freeze prints numpy==2.0.2 etc."
+verified_with: "2 cases, caches purged. Loose names: uv 3.06s vs pip 17.19s (uv 5.6x, resolution-heavy). Pinned requirements.txt, 3 cold trials: uv ~2.9-3.6s vs pip ~1.6s (pip faster, little to resolve)."
 source_session: 2026-10-20
 ---
 
@@ -40,19 +40,35 @@ Saved as `requirements.txt`, anyone running `pip install -r requirements.txt` ge
 "add 200g flour" → everyone gets your cake. Forgetting to freeze = publishing the
 vague recipe.
 
-## "Faster" — justified with a measurement
+## "Faster" — justified with a measurement (and where it's NOT faster)
 
-Same 3 packages (numpy + matplotlib + sklearn), fresh, no cache, timed on a real
-machine:
+The honest answer is: **it depends on whether there's resolution work to do.**
+Two measurements on the same machine, both fresh with caches purged.
+
+**Case 1 — loose names, resolution-heavy:** `install numpy matplotlib scikit-learn`
+(no versions pinned, so the tool must figure out compatible versions):
 
 | Tool | Time | |
 |---|---|---|
 | pip (written in Python) | 17.19 s | |
 | uv (written in Rust) | 3.06 s | **~5.6× faster** |
 
-Not a blog claim — a reproducible measurement. On a 50+ package project the gap
-widens because uv also downloads in parallel and resolves with a faster algorithm.
-(See **q-0006** for *why* Rust makes the tool fast.)
+**Case 2 — the pinned `requirements.txt` (this repo), 3 cold trials:**
+
+| Tool | Trial 1 | Trial 2 | Trial 3 | |
+|---|---|---|---|---|
+| uv | 2.87 s | 3.18 s | 3.55 s | |
+| pip | 1.62 s | 1.65 s | 1.68 s | **pip faster here** |
+
+**Why the flip?** uv's big win is *dependency resolution* — choosing compatible
+versions from loose names (Case 1, where pip spent ~15s deciding). When versions
+are already pinned (Case 2), there's almost nothing to resolve: both just download
+and install, and pip was actually quicker on this small pinned set.
+
+**The honest takeaway:** uv shines on large, unpinned installs where resolution
+dominates. For a tiny pre-pinned list the difference is small and can go either way.
+Don't state "uv is always faster" — state *where* it's faster and show the number.
+(See **q-0006** for *why* Rust makes resolution fast.)
 
 ## Next
 
